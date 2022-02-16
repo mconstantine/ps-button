@@ -1,0 +1,36 @@
+.btn-primary {
+  --button-background-color: #0d6efd;
+}
+
+.btn-secondary {
+  --button-background-color: #6c757d;
+}
+
+.ps-button {
+  position: relative;
+  border-radius: 2rem;
+  border-color: transparent;
+  transition: box-shadow 250ms linear;
+}
+
+.ps-button:hover {
+  /* re-override Bootstrap */
+  background-color: transparent;
+  border-color: transparent;
+
+  box-shadow: 0 0 0 2px var(--button-background-color);
+}
+
+.ps-button > * {
+  position: relative;
+}
+
+.ps-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: var(--button-background-color);
+  border-radius: inherit;
+  padding: 2px;
+}
